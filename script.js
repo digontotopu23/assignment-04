@@ -99,6 +99,7 @@ function renderJobs() {
     document.getElementById("tabCount").innerText = filtered.length + " jobs";
 
     if (filtered.length === 0) {
+        container.innerHTML = "";
         document.getElementById("noJobs").classList.remove("hidden");
         return;
     } else {
