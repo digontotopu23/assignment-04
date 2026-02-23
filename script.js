@@ -9,6 +9,77 @@ const jobs = [
     salary: "$130,000 - $175,000",
     description: "Build cross-platform mobile apps using React Native.",
     status: "none"
+  },
+
+  {
+    id: 2,
+    company: "WebFlow Agency",
+    position: "Web Designer & Developer",
+    location: "Los Angeles, CA",
+    type: "Part-time",
+    salary: "$80,000 - $120,000",
+    description: "Create stunning web experiences for high-profile clients.",
+    status: "none"
+  },
+  {
+    id: 3,
+    company: "DataViz Solutions",
+    position: "Data Visualization Specialist",
+    location: "Boston, MA",
+    type: "Full-time",
+    salary: "$125,000 - $165,000",
+    description: "Transform complex data into compelling dashboards.",
+    status: "none"
+  },
+  {
+    id: 4,
+    company: "CloudFirst Inc",
+    position: "Backend Developer",
+    location: "Seattle, WA",
+    type: "Full-time",
+    salary: "$140,000 - $190,000",
+    description: "Develop scalable backend services using Python.",
+    status: "none"
+  },
+  {
+    id: 5,
+    company: "Innovation Labs",
+    position: "UI/UX Engineer",
+    location: "Austin, TX",
+    type: "Full-time",
+    salary: "$110,000 - $150,000",
+    description: "Design and build intuitive user interfaces.",
+    status: "none"
+  },
+  {
+    id: 6,
+    company: "MegaCorp Solutions",
+    position: "JavaScript Developer",
+    location: "New York, NY",
+    type: "Full-time",
+    salary: "$130,000 - $170,000",
+    description: "Build enterprise web apps using modern frameworks.",
+    status: "none"
+  },
+  {
+    id: 7,
+    company: "StartupXYZ",
+    position: "Full Stack Engineer",
+    location: "Remote",
+    type: "Full-time",
+    salary: "$120,000 - $160,000",
+    description: "Work on fast-growing startup platform.",
+    status: "none"
+  },
+  {
+    id: 8,
+    company: "TechCorp Industries",
+    position: "Senior Frontend Developer",
+    location: "San Francisco, CA",
+    type: "Full-time",
+    salary: "$150,000 - $175,000",
+    description: "Develop scalable frontend apps using React.",
+    status: "none"
   }
    
 ];
