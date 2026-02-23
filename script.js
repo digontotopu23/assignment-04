@@ -137,4 +137,16 @@ function renderJobs() {
   updateDashboard();
 }
 
+function toggleStatus(id, status) {
+  const job = jobs.find(j => j.id === id);
+
+  if (job.status === status) {
+    job.status = "none";
+  } else {
+    job.status = status;
+  }
+
+  renderJobs();
+}
+
 renderJobs();
