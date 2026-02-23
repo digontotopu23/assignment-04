@@ -7,7 +7,7 @@ const jobs = [
         location: "Remote",
         type: "Full-time",
         salary: "$130,000 - $175,000",
-        description: "Build cross-platform mobile apps using React Native.",
+        description: "Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.",
         status: "none"
     },
 
@@ -18,7 +18,7 @@ const jobs = [
         location: "Los Angeles, CA",
         type: "Part-time",
         salary: "$80,000 - $120,000",
-        description: "Create stunning web experiences for high-profile clients.",
+        description: "Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.",
         status: "none"
     },
     {
@@ -28,7 +28,7 @@ const jobs = [
         location: "Boston, MA",
         type: "Full-time",
         salary: "$125,000 - $165,000",
-        description: "Transform complex data into compelling dashboards.",
+        description: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.",
         status: "none"
     },
     {
@@ -38,7 +38,7 @@ const jobs = [
         location: "Seattle, WA",
         type: "Full-time",
         salary: "$140,000 - $190,000",
-        description: "Develop scalable backend services using Python.",
+        description: "Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.",
         status: "none"
     },
     {
@@ -48,7 +48,7 @@ const jobs = [
         location: "Austin, TX",
         type: "Full-time",
         salary: "$110,000 - $150,000",
-        description: "Design and build intuitive user interfaces.",
+        description: "Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.",
         status: "none"
     },
     {
@@ -58,7 +58,7 @@ const jobs = [
         location: "New York, NY",
         type: "Full-time",
         salary: "$130,000 - $170,000",
-        description: "Build enterprise web apps using modern frameworks.",
+        description: "Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.",
         status: "none"
     },
     {
@@ -68,7 +68,7 @@ const jobs = [
         location: "Remote",
         type: "Full-time",
         salary: "$120,000 - $160,000",
-        description: "Work on fast-growing startup platform.",
+        description: "Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.",
         status: "none"
     },
     {
@@ -78,7 +78,7 @@ const jobs = [
         location: "San Francisco, CA",
         type: "Full-time",
         salary: "$150,000 - $175,000",
-        description: "Develop scalable frontend apps using React.",
+        description: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.",
         status: "none"
     }
 
@@ -113,8 +113,20 @@ function renderJobs() {
       <div class="flex justify-between">
         <div>
           <h3 class="font-bold">${job.company}</h3>
-          <p class="text-sm text-gray-500">${job.position}</p>
-          <p class="text-xs text-gray-400">${job.location}; ${job.type}; ${job.salary}</p>
+<p class="text-sm text-gray-500 mb-4">${job.position}</p>
+  <p class="text-xs text-gray-400 mb-4">${job.location} • ${job.type} • ${job.salary}</p>
+
+<span class="inline-block mt-1 px-2 py-1 text-xs rounded 
+${job.status === 'interview' ? 'bg-green-100 text-green-700' :
+                job.status === 'rejected' ? 'bg-red-100 text-red-700' :
+                    'bg-blue-100 text-blue-700'}">
+  
+${job.status === 'interview' ? 'INTERVIEW' :
+                job.status === 'rejected' ? 'REJECTED' :
+                    'NOT APPLIED'}
+
+</span>
+         
         </div>
         <button onclick="deleteJob(${job.id})" class="text-gray-400 hover:text-red-500"><i class="fa-regular fa-trash-can"></i></button>
       </div>
@@ -149,7 +161,13 @@ function toggleStatus(id, status) {
     renderJobs();
 }
 
-
+function deleteJob(id) {
+    const index = jobs.findIndex(j => j.id === id);
+    if (index !== -1) {
+        jobs.splice(index, 1);
+    }
+    renderJobs();
+}
 
 function changeTab(tab, event) {
     currentTab = tab;
