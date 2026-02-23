@@ -32,7 +32,7 @@
 
             <div class="bg-white p-4 rounded shadow">
                 <p class="text-gray-500 text-sm">Interview</p>
-                <h2 id="InterviewCount" class="text-2xl font-bold text-green-600">0</h2>
+                <h2 id="interviewCount" class="text-2xl font-bold text-green-600">0</h2>
             </div>
 
             <div class="bg-white p-4 rounded shadow">
@@ -40,9 +40,9 @@
                 <h2 id="rejectedCount" class="text-2xl font-bold text-red-600">0</h2>
             </div>
         </div>
-
+     <hr class="border-gray-300 opacity-40 my-5">
         <!--Available jobs-->
-        <div class="flex justify-between items-center mb-3">
+        <div class="max-w-6xl mx-auto flex justify-between items-center mb-3">
             <h2>Available Jobs</h2>
             <span id="tabCount" class="text-sm text-gray-500">8 Jobs</span>
         </div>
@@ -54,16 +54,18 @@
         </div>
 
         <!--Cards container-->
-        <div id="JobsContainer" class="space-y-4"></div>
-        <div id="nojobs" class=" bg-white p-10 text-center rounded shadow">
-             <div class="flex justify-center mb-4"><img src="jobs.png" alt="jobs" class="w-25 h-25 object-contain"></div>
+        <div id="jobsContainer" class="space-y-4"></div>
+        <div id="noJobs" class="hidden bg-white p-10 text-center rounded shadow">
+             <div class="flex justify-center mb-4"><img src="jobs.png" alt="jobs" class="w-20 h-20 object-contain"></div>
             <h3 class="font-semibold text-lg">No jobs available</h3>
             <p class="text-gray-500 text-sm">Check back soon for new job opportunities</p>
         </div>
-
+       
 
     </div>
+      
 
+      <script src="script.js"></script>
 </body>
 
 </html>
