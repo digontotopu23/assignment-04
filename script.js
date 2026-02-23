@@ -84,4 +84,57 @@ const jobs = [
    
 ];
 
- 
+ let currentTab = "all";
+
+function renderJobs() {
+  const container = document.getElementById("jobsContainer");
+  container.innerHTML = "";
+
+  let filtered = jobs;
+
+  if (currentTab !== "all") {
+    filtered = jobs.filter(job => job.status === currentTab);
+  }
+
+  document.getElementById("tabCount").innerText = filtered.length + " jobs";
+
+  if (filtered.length === 0) {
+    document.getElementById("noJobs").classList.remove("hidden");
+    return;
+  } else {
+    document.getElementById("noJobs").classList.add("hidden");
+  }
+
+  filtered.forEach(job => {
+    const div = document.createElement("div");
+    div.className = "bg-white p-4 rounded shadow";
+
+    div.innerHTML = `
+      <div class="flex justify-between">
+        <div>
+          <h3 class="font-bold">${job.company}</h3>
+          <p class="text-sm text-gray-500">${job.position}</p>
+          <p class="text-xs text-gray-400">${job.location}; ${job.type}; ${job.salary}</p>
+        </div>
+        <button onclick="deleteJob(${job.id})" class="text-gray-400 hover:text-red-500"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+      <p class="text-sm mt-2">${job.description}</p>
+      <div class="flex gap-2 mt-3">
+        <button onclick="toggleStatus(${job.id}, 'interview')" 
+          class="px-3 py-1 text-sm rounded border ${job.status==='interview' ? 'bg-green-500 text-white' : 'border-green-500 text-green-600'}">
+          Interview
+        </button>
+
+        <button onclick="toggleStatus(${job.id}, 'rejected')" 
+          class="px-3 py-1 text-sm rounded border ${job.status==='rejected' ? 'bg-red-500 text-white' : 'border-red-500 text-red-600'}">
+          Rejected
+        </button>
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+  updateDashboard();
+}
+
+renderJobs();
