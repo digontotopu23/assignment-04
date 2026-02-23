@@ -148,5 +148,17 @@ function toggleStatus(id, status) {
 
   renderJobs();
 }
+function changeTab(tab, event) {
+  currentTab = tab;
+
+  document.querySelectorAll(".tab-btn").forEach(btn=>{
+    btn.classList.remove("bg-blue-600","text-white");
+    btn.classList.add("bg-gray-200");
+  });
+   event.target.classList.remove("bg-gray-200");
+  event.target.classList.add("bg-blue-600","text-white");
+
+  renderJobs();
+}
 
 renderJobs();
